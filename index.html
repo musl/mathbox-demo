@@ -12,16 +12,40 @@
 
 		<link rel="stylesheet" type="text/css" charset="utf-8" href="css/reset.css"> 
 		<link rel="stylesheet" type="text/css" charset="utf-8" href="css/style.css"> 
+
+		<script type="text/mustache" id="info_template">
+			<article>
+			 	<p>Please serve up this page with a web server.</p>
+				<p>Here is a simple way to do that on your local computer:</p>
+				<ol>
+					<li>
+						<p>Run one of the following sets of commands from a terminal:</p>
+						<p>Python 2:</p>
+						<code>cd {{path}}<br>python -m SimpleHTTPServer 8000</code>
+						<p>Python 3:</p>
+						<code>cd {{path}}<br>python -m http.server 8000 </code>
+						<p>Ruby:</p>
+						<code>ruby -run -e httpd {{path}} -p 8000</code>
+					</li>
+					<li>
+						<p>Go to: <a href="http://localhost:8000/">http://localhost:8000/</a></p>
+					</li>
+				</ol>
+			</article>
+		</script>
+
+		<script type="text/javascript" charset="utf-8" src="js/jquery-2.2.0.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/can-2.3.13-custom.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
 	</head>
 	<body>
 		<header>
 			<h1>MathBox 2 Demos</h1>
 			<noscript><p>This requires javascript.</p></noscript>
 		</header>
-		<article>
-			<iframe id="demo0" src="demo.html" class="mathbox"></iframe>
-			<button onClick="document.getElementById('demo0').contentWindow.postMessage('reload', '*');">refresh demo</button>
-		</article>
-		<footer><p>~</p></footer>
+		<div id="demos"></div>
+		<footer>
+			<p>&because;</p>
+		</footer>
 	</body>
 </html>
