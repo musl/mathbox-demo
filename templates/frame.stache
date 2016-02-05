@@ -1,4 +1,4 @@
-			<article>
-				<iframe id="demo-{{index}}" class="mathbox" src="demo.html?index={{index}}"></iframe>
-				<button can-click="reload({{index}});">reload</button>
-			</article>
+<article>
+	<iframe id="demo-{{index}}" class="mathbox" src="demo.html?index={{index}}"></iframe>
+	<button can-click="reload({{index}});">reload</button>
+</article>
